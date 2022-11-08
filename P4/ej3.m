@@ -1,0 +1,1 @@
+addpath('../../funciones');T = 10;t = [-10:0.01:10];u = escalon(t);x = exp(-3.*t).*u;##plot(t,x);y = ((1 - exp(-3.*(t+0.5))).*cajon(t))./3 + (((1 - exp(-3)).*exp(-3.*(t-0.5))).*escalon(t - 0.5))./3;plot(t, y);
