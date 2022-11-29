@@ -1,7 +1,7 @@
 function [ y ] = filtrado_3_ramas( x )
   y = zeros(size(x));
   y(1) = x(1);
-  for i=1:length(x)
+  for i=2:length(x)
     if(i < 8821)
       y(i) = x(i);
     elseif(i < 17641)

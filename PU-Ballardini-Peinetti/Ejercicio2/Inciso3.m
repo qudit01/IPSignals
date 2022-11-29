@@ -13,12 +13,13 @@ ylabel('y[n]');
 %% Podemos escuchar ecos
 
 # DESCOMENTAR PARA ESCUCHAR
-#sound(y, fs);
+sound(x, fs);
 figure,
 subplot(2,1,1),
 plot(x(:,1));
 title('Señal del audio original (solo el canal izquierdo del audio)');
 
+sound(y, fs);
 subplot(2,1,2),
 plot(y(:,1));
 title('Señal del audio con eco');
