@@ -5,7 +5,8 @@
 [x, fs] = audioread('audio.wav');
 
 %% Procedemos a obtener la respuesta del sistema frente a la entrada de audio
-y = funcion_prueba(x);
+y = funcion_prueba(x(:,1));
+y += funcion_prueba(x(:,2));
 xlabel('n');
 ylabel('y[n]');
 

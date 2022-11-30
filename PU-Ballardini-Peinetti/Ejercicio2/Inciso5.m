@@ -7,28 +7,28 @@ salida_filtrada_3 = filtrado_3_ramas(y);
 
 %% Graficamos los resultados obtenidos
 figure,
-subplot(2,1,1), plot(salida_filtrada_1, 'r');
-title('Filtro con una rama');
-
-subplot(2,1,2), plot(y, 'k');
+subplot(2,1,1), plot(y, 'k');
 title('Señal original');
-sound(salida_filtrada_1, fs);
+
+subplot(2,1,2), plot(salida_filtrada_1, 'r');
+title('Filtro con una rama');
+##sound(salida_filtrada_1(:,1), fs);
 print -f7 -dpng figura_7
 
 figure,
-subplot(2,1,1), plot(salida_filtrada_2, 'g');
-title('Filtro con dos ramas');
-
-subplot(2,1,2), plot(y, 'k');
+subplot(2,1,1), plot(y, 'k');
 title('Señal original');
-sound(salida_filtrada_2, fs);
+
+subplot(2,1,2), plot(salida_filtrada_2, 'g');
+title('Filtro con dos ramas');
+##sound(salida_filtrada_2(:,1), fs);
 print -f8 -dpng figura_8
 
 figure,
-subplot(2,1,1), plot(salida_filtrada_3, 'm');
-title('Filtro con 3 ramas');
-
-subplot(2,1,2), plot(y, 'k');
+subplot(2,1,1), plot(y, 'k');
 title('Señal original');
-sound(salida_filtrada_3, fs);
+
+subplot(2,1,2), plot(salida_filtrada_3, 'm');
+title('Filtro con 3 ramas');
+##sound(salida_filtrada_3(:,1), fs);
 print -f9 -dpng figura_9

@@ -5,7 +5,7 @@
 [x, fs] = audioread('audio.wav');
 
 %% Procedemos a obtener la respuesta del sistema frente a la entrada de audio
-y = funcion_prueba(x);
+y = funcion_prueba(x(:,1)) + funcion_prueba(x(:,2));
 xlabel('n');
 ylabel('y[n]');
 
@@ -13,14 +13,19 @@ ylabel('y[n]');
 %% Podemos escuchar ecos
 
 # DESCOMENTAR PARA ESCUCHAR
-sound(x, fs);
 figure,
-subplot(2,1,1),
+subplot(3,1,1),
 plot(x(:,1));
 title('Señal del audio original (solo el canal izquierdo del audio)');
+##sound(x(:,1), fs);
 
-sound(y, fs);
-subplot(2,1,2),
-plot(y(:,1));
+subplot(3,1,2),
+plot(x(:,2));
+title('Señal del audio original (solo el canal derecho del audio)');
+##sound(x(:,2), fs);
+
+subplot(3,1,3),
+plot(y);
 title('Señal del audio con eco');
 print -f3 -dpng figura_3
+##sound(y, fs);

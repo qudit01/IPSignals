@@ -1,9 +1,8 @@
 %% INCISO 2
 
 %% Declaramos una delta de Kronecker con sus índices
-deltaK = zeros(size(h));
-deltaK(1) = 1;
-indiceK = [0:1:26459];
+indiceK = [0:1:45000];
+deltaK = indiceK == 0;
 
 %% Obtenemos la repuesta del sistema a una delta de Kronecker
 hprueba = funcion_prueba(deltaK);
@@ -18,7 +17,7 @@ title('Respuesta impulsional h');
 xlabel('s');
 ylabel('|H(e^(j*2*pi*s))|');
 
-subplot(2,1,2), stem(n, hprueba, '-m');
+subplot(2,1,2), stem(indiceK, hprueba, '-m');
 xlim([0 26459]);
 title('Respuesta del sistema a una delta de Kronecker');;
 xlabel('s');
